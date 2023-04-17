@@ -42,4 +42,6 @@ local function drawBattery()
     end
 end
 
+term.setBackgroundColor(colors.black)
+term.clear()
 parallel.waitForAll(drawBattery)
