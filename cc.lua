@@ -1,26 +1,30 @@
-if pocket then
+local scrn, chatBox, playerDetector
+local battery
+local redput, Red1, Red2
 
-else
-    local scrn = peripheral.find("monitor")
-    local chatBox = peripheral.find("chatBox")
-    local playerDetector = peripheral.find("playerDetector")
+local getEnergyFilledPercentage
 
-    local battery = peripheral.find("inductionPort")
+if ~pocket then
+    scrn = peripheral.find("monitor")
+    chatBox = peripheral.find("chatBox")
+    playerDetector = peripheral.find("playerDetector")
 
-    local redput = {peripheral.find("redstoneIntegrator")}
-    local Red1 = redput[#redput]
-    local Red2 = redput[#redput-1]
+    battery = peripheral.find("inductionPort")
 
-    local RS_MAIN = {Red1, "right"}
-    local RS_MACHINES = {Red1, "top"}
-    local RS_DRAWERS = {Red1, "left"}
+    redput = {peripheral.find("redstoneIntegrator")}
+    Red1 = redput[#redput]
+    Red2 = redput[#redput-1]
 
-    local BATTERY = {Red2, "top"}
-    local REACTOR_A = {Red2, "back"}
-    local REACTOR_B = {Red2, "left"}
-
-    local getEnergyFilledPercentage = battery.getEnergyFilledPercentage
+    getEnergyFilledPercentage = battery.getEnergyFilledPercentage
 end
+
+local RS_MAIN = {Red1, "right"}
+local RS_MACHINES = {Red1, "top"}
+local RS_DRAWERS = {Red1, "left"}
+
+local BATTERY = {Red2, "top"}
+local REACTOR_A = {Red2, "back"}
+local REACTOR_B = {Red2, "left"}
 
 local size = pocket and {26,20} or {50,33}
 
