@@ -24,9 +24,9 @@ end
 
 local function drawBattery()
     while true do
-        paintutils.drawBox(1,1,size[1],5,colors.gray)
         paintutils.drawFilledBox(2,2,size[1]-1,3,colors.lightGray)
-        paintutils.drawFilledBox(2,2,2+(size[1]-3)*battery.getFilledPercentage(),3,colors.lime)
+        local w = math.floor((size[1]-3)*getEnergyFilledPercentage())
+        paintutils.drawFilledBox(2,2,1+w,3,colors.lime)
         os.sleep(1)
     end
 end
