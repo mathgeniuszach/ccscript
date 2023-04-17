@@ -4,7 +4,7 @@ local redput, Red1, Red2
 
 local getEnergyFilledPercentage
 
-if ~pocket then
+if not pocket then
     scrn = peripheral.find("monitor")
     chatBox = peripheral.find("chatBox")
     playerDetector = peripheral.find("playerDetector")
